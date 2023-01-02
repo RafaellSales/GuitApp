@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "GuitApp",
+    "slug": "GuitApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
