@@ -39,6 +39,9 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <Logo />
+      {/* <Text style={styles.name}>
+        Digite o nome do usuario do GuitHub para consultar seu perfil
+      </Text> */}
       <TextInput
         icon="github"
         onChangeText={(e) => setUserName(e)}

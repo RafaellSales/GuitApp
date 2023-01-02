@@ -4,7 +4,10 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#373D98",
-    paddingTop: 24,
+  },
+  lista: {
+    flex: 1,
+    padding: 10,
   },
   scroll: {
     paddingBottom: 150,
@@ -28,9 +31,9 @@ export const styles = StyleSheet.create({
   },
   name: {
     fontSize: 22,
+    textAlign: "center",
     fontWeight: "900",
-    color: "#000",
-    textTransform: "uppercase",
+    color: "#fff",
   },
   sticker: {
     backgroundColor: "#373D98",

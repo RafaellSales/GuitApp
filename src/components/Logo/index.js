@@ -11,8 +11,8 @@ export function Logo() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 50,
-    margin: 50,
+    paddingTop: 64,
+    margin: 24,
     justifyContent: "center",
     alignItems: "center",
   },
