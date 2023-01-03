@@ -7,6 +7,8 @@ import { View, Text, FlatList } from "react-native";
 import { styles } from "./styles";
 import { Close } from "../../components/Close";
 import { Card } from "../../components/Card";
+import { Lottie } from "../../components/Animations/Lottie";
+import Loading from "../../assets/animations/guit.json";
 
 export default function Details() {
   const route = useRoute();
@@ -28,12 +30,12 @@ export default function Details() {
     );
     const data = await res.json();
     // console.log(data);
-    setIsLoading(false);
     let orderedRepos = data.sort(
       (a, b) => b.stargazers_count - a.stargazers_count
     );
     orderedRepos = orderedRepos.slice(0, 5);
     setRepos(orderedRepos);
+    setIsLoading(false);
   }
 
   function handleHome() {
@@ -48,10 +50,9 @@ export default function Details() {
       <Close onPress={handleHome} />
       <User {...user} />
       <View style={styles.lista}>
-        {repos && repos.length === 0 && (
-          <Text style={styles.name}>Não há repositórios publicos</Text>
-        )}
-        {repos && repos.length > 0 && (
+        {isLoading ? (
+          <Lottie source={Loading} />
+        ) : (
           <FlatList
             data={repos}
             keyExtractor={(item) => item.name}
@@ -64,7 +65,18 @@ export default function Details() {
                 {...item}
               />
             )}
-            showsHorizontalScrollIndicator={false}
+            ListHeaderComponent={
+              <>
+                <Text style={styles.name}>Repositórios publicos</Text>
+              </>
+            }
+            ListEmptyComponent={
+              <>
+                <Text style={styles.name}>Não há repositórios publicos</Text>
+              </>
+            }
+            showsVerticalScrollIndicator={false}
+            // showsHorizontalScrollIndicator={false}
             // horizontal
           />
         )}

@@ -1,16 +1,20 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#373D98",
+    justifyContent: "center",
+    alignItems: "center",
   },
-  lista: {
-    flex: 1,
-    padding: 10,
+  content: {
+    margin: 64,
+  },
+  footer: {
+    margin: 32,
   },
   name: {
-    fontSize: 22,
+    fontSize: 32,
     textAlign: "center",
     fontWeight: "900",
     color: "#fff",

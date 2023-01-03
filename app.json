@@ -5,11 +5,18 @@
     "icon": "./assets/icon.png",
     "backgroundColor": "#373D98",
     "version": "1.0.0",
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#373D98"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8d0345e0-2204-4553-91e0-7eccfa8d7614"
+      }
     }
   }
 }
