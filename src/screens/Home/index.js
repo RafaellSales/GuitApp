@@ -1,17 +1,15 @@
 import { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Button } from "../../components/Button";
-import { View, Text, BackHandler } from "react-native";
+import { View, BackHandler } from "react-native";
 import { styles } from "./styles";
 import TextInput from "../../components/TextInput";
 import { Logo } from "../../components/Logo";
 import { api } from "../../services/api";
 
 export default function Home() {
-  const [user, setUser] = useState(null);
   const [userName, setUserName] = useState("");
   const navigation = useNavigation();
-  const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -21,26 +19,15 @@ export default function Home() {
   }, []);
 
   async function loadUser() {
-    setUser(null);
-    setIsLoading(true);
-    const res = await fetch(`https://api.github.com/users/${userName}`);
-    const data = await res.json();
-    setIsLoading(false);
-    if (res.status === 404) {
-      setError(true);
-      return;
+    try {
+      setIsLoading(true);
+      const response = await api.get(userName);
+      let userData = response.data;
+      setIsLoading(false);
+      navigation.navigate("Details", { userData });
+    } catch (error) {
+      setIsLoading(false);
     }
-    setError(false);
-    const { avatar_url, login, location, followers, following } = data;
-    const userData = {
-      avatar_url,
-      login,
-      location,
-      followers,
-      following,
-    };
-    setUser(userData);
-    navigation.navigate("Details", { userData });
   }
 
   return (

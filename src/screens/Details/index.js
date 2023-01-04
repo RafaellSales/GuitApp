@@ -9,6 +9,7 @@ import { Close } from "../../components/Close";
 import { Card } from "../../components/Card";
 import { Lottie } from "../../components/Animations/Lottie";
 import Loading from "../../assets/animations/guit.json";
+import { api } from "../../services/api";
 
 export default function Details() {
   const route = useRoute();
@@ -24,18 +25,21 @@ export default function Details() {
   }, []);
 
   async function loadrepos() {
-    setIsLoading(true);
-    const res = await fetch(
-      `https://api.github.com/users/${userData.userData.login}/repos`
-    );
-    const data = await res.json();
-    // console.log(data);
-    let orderedRepos = data.sort(
-      (a, b) => b.stargazers_count - a.stargazers_count
-    );
-    orderedRepos = orderedRepos.slice(0, 5);
-    setRepos(orderedRepos);
-    setIsLoading(false);
+    try {
+      setIsLoading(true);
+
+      let name = userData.userData.login;
+      const response = await api.get(`${name}/repos`);
+      let orderedRepos = response.data.sort(
+        (a, b) => b.stargazers_count - a.stargazers_count
+      );
+      orderedRepos = orderedRepos.slice(0, 5);
+
+      setRepos(orderedRepos);
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+    }
   }
 
   function handleHome() {

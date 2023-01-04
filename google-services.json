@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "95710881015",
+    "project_id": "guitapp-5e477",
+    "storage_bucket": "guitapp-5e477.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95710881015:android:e13715a3466919eaf85ff2",
+        "android_client_info": {
+          "package_name": "com.rafadevmo.GuitApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95710881015-a4lrt8cd6bhcvnq985o5l6vdsdc7dlq0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB38dzxJn59KTqR9OFIViokaus7SGoh3Yc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95710881015-a4lrt8cd6bhcvnq985o5l6vdsdc7dlq0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

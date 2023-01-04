@@ -6,7 +6,7 @@ import { styles } from "./styles";
 export function Close({ onPress }) {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
-      <AntDesign name="close" size={24} color="#fff" />
+      <AntDesign name="arrowleft" size={24} color="#fff" />
     </TouchableOpacity>
   );
 }
