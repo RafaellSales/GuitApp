@@ -1,4 +1,4 @@
-package com.guitapp;
+package com.rafadevmo.GuitApp;
 
 import android.os.Build;
 import android.os.Bundle;

@@ -7,11 +7,13 @@ import load from "../../assets/animations/load.json";
 
 export default function Splash() {
   const navigation = useNavigation();
+
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       navigation.navigate("Home");
     }, 3000);
   }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.content}>

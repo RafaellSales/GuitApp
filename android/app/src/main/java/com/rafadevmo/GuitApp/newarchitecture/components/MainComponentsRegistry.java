@@ -1,4 +1,4 @@
-package com.guitapp.newarchitecture.components;
+package com.rafadevmo.GuitApp.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

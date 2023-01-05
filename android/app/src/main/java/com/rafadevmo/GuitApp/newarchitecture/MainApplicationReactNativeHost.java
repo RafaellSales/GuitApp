@@ -1,4 +1,4 @@
-package com.guitapp.newarchitecture;
+package com.rafadevmo.GuitApp.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -20,9 +20,9 @@ import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.guitapp.BuildConfig;
-import com.guitapp.newarchitecture.components.MainComponentsRegistry;
-import com.guitapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.rafadevmo.GuitApp.BuildConfig;
+import com.rafadevmo.GuitApp.newarchitecture.components.MainComponentsRegistry;
+import com.rafadevmo.GuitApp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

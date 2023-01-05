@@ -33,15 +33,17 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <Logo />
-      {/* <Text style={styles.name}>
-        Digite o nome do usuario do GuitHub para consultar seu perfil
-      </Text> */}
       <TextInput
         icon="github"
         onChangeText={(e) => setUserName(e)}
         placeholder="Digite o nome do usuário"
       />
-      <Button loading={isLoading} title="Buscar" onPress={loadUser} />
+      <Button
+        title="Buscar"
+        loading={isLoading}
+        disabled={isLoading}
+        onPress={loadUser}
+      />
     </View>
   );
 }

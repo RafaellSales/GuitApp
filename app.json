@@ -6,7 +6,9 @@
     "primaryColor": "#373D98",
     "backgroundColor": "#373D98",
     "version": "1.0.0",
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -20,6 +22,9 @@
     "android": {
       "googleServicesFile": "./google-services.json",
       "package": "com.rafadevmo.GuitApp"
+    },
+    "ios": {
+      "bundleIdentifier": "com.rafadevmo.GuitApp"
     }
   }
 }

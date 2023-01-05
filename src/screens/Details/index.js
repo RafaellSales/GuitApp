@@ -27,15 +27,9 @@ export default function Details() {
   async function loadrepos() {
     try {
       setIsLoading(true);
-
       let name = userData.userData.login;
       const response = await api.get(`${name}/repos`);
-      let orderedRepos = response.data.sort(
-        (a, b) => b.stargazers_count - a.stargazers_count
-      );
-      orderedRepos = orderedRepos.slice(0, 5);
-
-      setRepos(orderedRepos);
+      setRepos(response.data);
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
@@ -80,8 +74,6 @@ export default function Details() {
               </>
             }
             showsVerticalScrollIndicator={false}
-            // showsHorizontalScrollIndicator={false}
-            // horizontal
           />
         )}
       </View>
