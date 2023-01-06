@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Button } from "../../components/Button";
-import { View, BackHandler } from "react-native";
+import { View, Text, Alert, BackHandler } from "react-native";
 import { styles } from "./styles";
 import TextInput from "../../components/TextInput";
 import { Logo } from "../../components/Logo";
@@ -26,6 +26,7 @@ export default function Home() {
       setIsLoading(false);
       navigation.navigate("Details", { userData });
     } catch (error) {
+      Alert.alert("ATENÇÃO", " Digite um nome de usuário valido");
       setIsLoading(false);
     }
   }
@@ -33,6 +34,7 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <Logo />
+      <Text style={styles.name}>Digite o nome do usuário do GuitHub </Text>
       <TextInput
         icon="github"
         onChangeText={(e) => setUserName(e)}

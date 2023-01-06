@@ -1,15 +1,12 @@
-import React, { useRef, useCallback } from "react";
+import React, { useRef, useEffect } from "react";
 import LottieView from "lottie-react-native";
-import { useFocusEffect } from "@react-navigation/native";
 
 export function Lottie({ ...rest }) {
   const animation = useRef(null);
 
-  useFocusEffect(
-    useCallback(() => {
-      animation.current?.play();
-    }, [])
-  );
+  useEffect(() => {
+    animation.current?.play();
+  }, []);
 
   return (
     <LottieView

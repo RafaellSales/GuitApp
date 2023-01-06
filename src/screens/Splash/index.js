@@ -20,7 +20,7 @@ export default function Splash() {
         <Lottie source={load} />
       </View>
       <View style={styles.footer}>
-        <Text style={styles.name}>GuitHub App</Text>
+        <Text style={styles.name}>GuitApp</Text>
       </View>
     </View>
   );

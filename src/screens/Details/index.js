@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
-import User from "../../components/User";
-import { useNavigation, useRoute } from "@react-navigation/native";
-import { Button } from "../../components/Button";
-import * as WebBrowser from "expo-web-browser";
 import { View, Text, FlatList } from "react-native";
-import { styles } from "./styles";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { api } from "../../services/api";
+import * as WebBrowser from "expo-web-browser";
+import { Button } from "../../components/Button";
+import User from "../../components/User";
 import { Close } from "../../components/Close";
 import { Card } from "../../components/Card";
 import { Lottie } from "../../components/Animations/Lottie";
 import Loading from "../../assets/animations/guit.json";
-import { api } from "../../services/api";
+
+import { styles } from "./styles";
 
 export default function Details() {
   const route = useRoute();

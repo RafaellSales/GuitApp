@@ -5,9 +5,11 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#373D98",
   },
+
   name: {
-    fontSize: 22,
+    fontSize: 18,
     fontWeight: "900",
     color: "#fff",
+    textAlign: "center",
   },
 });

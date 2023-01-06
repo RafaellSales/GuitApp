@@ -10,9 +10,9 @@ export const styles = StyleSheet.create({
     padding: 10,
   },
   name: {
-    fontSize: 22,
-    textAlign: "center",
+    fontSize: 18,
     fontWeight: "900",
     color: "#fff",
+    textAlign: "center",
   },
 });

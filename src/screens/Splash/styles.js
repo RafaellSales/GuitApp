@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "#373D98",
   },
   content: {
-    margin: 32,
+    margin: 16,
     paddingTop: 64,
   },
   footer: {},
