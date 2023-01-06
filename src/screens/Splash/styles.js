@@ -4,11 +4,10 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#373D98",
+    justifyContent: "center",
+    alignItems: "center",
   },
-  content: {
-    margin: 16,
-    paddingTop: 64,
-  },
+  content: {},
   footer: {},
   name: {
     fontSize: 32,
