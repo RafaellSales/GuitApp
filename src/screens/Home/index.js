@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Button } from "../../components/Button";
-import { View, Text, Alert, BackHandler } from "react-native";
+import { View, Text, Alert } from "react-native";
 import { styles } from "./styles";
 import TextInput from "../../components/TextInput";
 import { Logo } from "../../components/Logo";
@@ -11,12 +11,6 @@ export default function Home() {
   const [userName, setUserName] = useState("");
   const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    BackHandler.addEventListener("hardwareBackPress", () => {
-      return true;
-    });
-  }, []);
 
   async function loadUser() {
     try {
