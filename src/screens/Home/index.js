@@ -5,12 +5,32 @@ import { View, Text, Alert } from "react-native";
 import { styles } from "./styles";
 import TextInput from "../../components/TextInput";
 import { Logo } from "../../components/Logo";
+import * as Yup from "yup";
 import { api } from "../../services/api";
 
 export default function Home() {
   const [userName, setUserName] = useState("");
   const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(false);
+
+  async function handleName() {
+    try {
+      const schema = Yup.object().shape({
+        userName: Yup.string().required("não pode está vazio"),
+      });
+      await schema.validate({ userName });
+      loadUser();
+    } catch (error) {
+      if (error instanceof Yup.ValidationError) {
+        Alert.alert("Atenção", error.message);
+      } else {
+        Alert.alert(
+          "Erro na autenticação",
+          "Ocorreu um erro ao fazer login, verifique as credenciais"
+        );
+      }
+    }
+  }
 
   async function loadUser() {
     try {
@@ -20,7 +40,7 @@ export default function Home() {
       setIsLoading(false);
       navigation.navigate("Details", { userData });
     } catch (error) {
-      Alert.alert("ATENÇÃO", " Digite um nome de usuário valido");
+      Alert.alert("ATENÇÃO", "Ocorreu um erro de conexão");
       setIsLoading(false);
     }
   }
@@ -38,7 +58,7 @@ export default function Home() {
         title="Buscar"
         loading={isLoading}
         disabled={isLoading}
-        onPress={loadUser}
+        onPress={handleName}
       />
     </View>
   );
