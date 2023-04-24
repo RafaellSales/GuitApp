@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "GutApp",
+    "slug": "my-app",
+    "icon": "./assets/icon.png",
+    "primaryColor": "#373D98",
+    "backgroundColor": "#373D98",
+    "version": "2.0.0",
+    "assetBundlePatterns": ["**/*"],
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#373D98"
+    },
+    "android": {
+      "package": "com.rafadevmo.guitapp",
+      "versionCode": 3
+    },
+    "extra": {
+      "eas": {
+        "projectId": "55f38623-a5ca-4923-b658-0db0d1b41356"
+      }
+    }
+  }
+}
